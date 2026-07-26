@@ -1,0 +1,323 @@
+aid: homes-com
+name: Homes.com
+review:
+  question: >-
+    Does Homes.com publish a reachable, documented API surface — and is it RESO
+    certified?
+  answer: false
+  date: '2026-07-26'
+  reviewer: API Evangelist
+  homeMarket: United States
+  tier: portal-marketplace
+
+resoPosture:
+  summary: >-
+    Listed in the RESO organization directory as an active Technology Company,
+    but with no Data Dictionary and no Web API certification recorded.
+  certified: false
+  certificationType: none
+  dataDictionaryVersion: null
+  dataDictionaryStatus: null
+  webApiVersion: null
+  webApiStatus: null
+  universalPropertyIdentifier: not referenced anywhere on any reachable Homes.com surface
+  odataMetadataDocument: none found or advertised
+  directoryEvidence:
+    source: https://www.reso.org/certification/
+    sourceStatus: 200
+    fetched: '2026-07-26'
+    note: >-
+      The RESO Certification and MLS Map page embeds its directory data as a
+      public Google Sheet. That sheet was exported as CSV (HTTP 200, 551,541
+      bytes, 2,881 organization rows) and searched directly. Columns:
+      OrganizationUniqueId, OrganizationType, OrganizationName,
+      OrganizationWebsite, OrganizationStatus, OrganizationCertName,
+      OrganizationDdVersion, OrganizationDdStatus, OrganizationWebApiVersion,
+      OrganizationWebApiStatus.
+    dataURL: https://docs.google.com/spreadsheets/d/13azRbctJ3V2yTibmFYLSfJZsdHc8v3r2NEgEmoHviRc/export?format=csv
+    dataURLStatus: 200
+  rowVerbatim:
+    OrganizationUniqueId: T00000143
+    OrganizationType: Technology Company
+    OrganizationName: Homes.com
+    OrganizationWebsite: https://www.homes.com/
+    OrganizationCity: Tallahassee
+    OrganizationStateOrProvince: FL
+    OrganizationCountry: USA
+    OrganizationStatus: '1'
+    ModificationTimestamp: '2022-04-06'
+    OrganizationCertName: ''
+    OrganizationDdVersion: ''
+    OrganizationDdStatus: ''
+    OrganizationWebApiVersion: ''
+    OrganizationWebApiStatus: ''
+  relatedRowsVerbatim:
+    - OrganizationUniqueId: T00000196
+      OrganizationName: CoStar Group
+      OrganizationType: Technology Company
+      OrganizationStatus: '1'
+      OrganizationDdStatus: ''
+      OrganizationWebApiStatus: ''
+      note: Parent company. Also listed, also uncertified.
+    - OrganizationUniqueId: T00000195
+      OrganizationName: Apartments.com
+      OrganizationType: Technology Company
+      OrganizationStatus: '1'
+      OrganizationDdStatus: ''
+      OrganizationWebApiStatus: ''
+      note: Sibling CoStar rentals marketplace. Also listed, also uncertified.
+    - OrganizationUniqueId: T00000020
+      OrganizationName: Homesnap
+      OrganizationType: Technology Company
+      OrganizationStatus: '0'
+      OrganizationStatusChangeTimestamp: '2024-11-15'
+      OrganizationComments: Merged into Homes.com
+      OrganizationDdStatus: ''
+      OrganizationWebApiStatus: ''
+      note: >-
+        Predecessor agent app. Marked inactive in the RESO directory with the
+        explicit comment "Merged into Homes.com". Never carried a certification
+        either.
+  benchmarkRowsVerbatim:
+    - OrganizationUniqueId: T00000007
+      OrganizationName: Move
+      OrganizationDdVersion: '1.7'
+      OrganizationDdStatus: Passed
+      OrganizationWebApiVersion: Core 2.0.0
+      OrganizationWebApiStatus: Passed
+      note: Realtor.com's operator. Certified — the direct portal-layer rival.
+    - OrganizationUniqueId: T00000044
+      OrganizationName: Bridge Interactive
+      OrganizationDdVersion: '1.7'
+      OrganizationDdStatus: Certified Legacy
+      OrganizationWebApiVersion: Core 2.0.0
+      OrganizationWebApiStatus: Certified Legacy
+      note: Zillow Group's MLS data arm. Certified.
+  blankIsMeaningful: >-
+    The certification columns are populated for Technology Company rows when a
+    certification exists — 25 of the 202 Technology Company rows in the export
+    carry a Data Dictionary and/or Web API status (Bridge Interactive, MLS Grid,
+    Cotality, Move, Rapattoni, FBS, Perchwell, Builders Update, ICE, and others).
+    Homes.com's blank columns are therefore a real absence of certification, not
+    a schema artefact of the row type. Across the whole export, 73 of 843 MLS
+    rows show OrganizationWebApiStatus = Passed.
+  certificationIsNotReachability: >-
+    For Homes.com the two facts collapse into one: it is neither certified nor
+    reachable. It is a RESO member organization that consumes MLS data rather
+    than publishing a RESO Web API. Its certification absence is a separate and
+    independently verified fact from its access gate.
+
+accessGate:
+  classification: none-published
+  whatADeveloperMustSignOrJoin: >-
+    Nothing is offered to sign or join, because no programmatic access product
+    is published. There is no developer agreement, no IDX or VOW licence form,
+    no API terms page, no partner API application, and no reseller path branded
+    by Homes.com. Data flows INTO Homes.com from MLSs and brokers through
+    syndication opt-in (managed in the MLS's own syndication preference panel or
+    through ListHub-style distribution tools), not OUT through any Homes.com
+    interface. The only self-serve signup on the property is a free consumer or
+    agent web account — the support site states plainly that MLS membership is
+    NOT required to create an agent profile ("Do I Need to Be a Part of an MLS
+    to Sign Up for Homes.com? No, non-MLS agents can also sign up") — but that
+    account grants a directory profile and lead routing in a browser, not an API
+    credential.
+  gated: true
+  publicSelfServePortal: false
+
+openData:
+  exists: false
+  note: >-
+    Homes.com publishes no open dataset. Its listing inventory is licensed MLS
+    and broker-syndicated content, and no bulk download, research data page, or
+    open-data endpoint was found. This is the US private-control pattern; there
+    is no US counterweight equivalent to HM Land Registry Price Paid data or
+    Ordnance Survey open products.
+
+authModel:
+  scheme: none published
+  apiKey: false
+  oauth2: false
+  openIDConnect: false
+  saml: false
+  wellKnownOpenIDConfiguration:
+    url: https://www.homes.com/.well-known/openid-configuration
+    status: 403
+    note: >-
+      Blocked by Akamai bot protection like every other path on the host; there
+      is also no developer or auth subdomain on which to look for one.
+  note: >-
+    The Homesnap GitHub organization carries a fork of AppAuth-iOS (an OAuth 2.0
+    / OpenID Connect CLIENT library). That is consumer-side evidence about how
+    their own mobile app authenticated, not evidence of a published
+    authorization server for third parties.
+
+findings:
+  summary: |
+    Homes.com is a portal-layer consumer of MLS data, not a publisher of it.
+    It has no developer programme, no machine-readable contract, and no RESO
+    certification. Every candidate developer host is NXDOMAIN, and the marketing
+    host is behind Akamai bot protection that returns 403 to every non-browser
+    request, so no contract path could be evaluated even opportunistically —
+    though none is advertised on any reachable surface either. The honest
+    finding is a company profile with an empty apis[] array.
+  developerPortal: none
+  machineReadableContracts: none
+  webhooks: none documented
+  events: none documented
+  sdks: none first-party
+  postman: none first-party
+  graphql: none documented
+  productFamily: >-
+    Homes.com's real segmentation is a consumer marketplace (for-sale, for-rent,
+    and off-market property search with price/tax history, property lines,
+    schools, transportation, and "Scores" panels), an agent directory and agent
+    profile product, and a brokerage-office presence layer. None of these are
+    exposed as an API. Valuation/AVM, transactions, documents, tenancy, and
+    payments are not represented at all on the Homes.com surface.
+
+probes:
+  - url: https://www.homes.com/
+    status: 403
+    note: Akamai bot protection; 403 with browser User-Agent and full browser header set alike.
+  - url: https://homes.com/
+    status: 403
+  - url: https://developer.homes.com/
+    status: 000
+    note: DNS NXDOMAIN — host does not exist.
+  - url: https://developers.homes.com/
+    status: 000
+    note: DNS NXDOMAIN — host does not exist.
+  - url: https://api.homes.com/
+    status: 000
+    note: DNS NXDOMAIN — host does not exist.
+  - url: https://apis.homes.com/
+    status: 000
+    note: DNS NXDOMAIN — host does not exist.
+  - url: https://docs.homes.com/
+    status: 000
+    note: DNS NXDOMAIN — host does not exist.
+  - url: https://dev.homes.com/
+    status: 000
+    note: DNS NXDOMAIN — host does not exist.
+  - url: https://idx.homes.com/
+    status: 000
+    note: DNS NXDOMAIN — host does not exist.
+  - url: https://feeds.homes.com/
+    status: 000
+    note: DNS NXDOMAIN — host does not exist.
+  - url: https://data.homes.com/
+    status: 000
+    note: DNS NXDOMAIN — host does not exist.
+  - url: https://media.homes.com/
+    status: 000
+    note: DNS NXDOMAIN — host does not exist.
+  - url: https://agents.homes.com/
+    status: 000
+    note: DNS NXDOMAIN — host does not exist.
+  - url: https://help.homes.com/
+    status: 000
+    note: DNS NXDOMAIN — host does not exist.
+  - url: https://partners.homes.com/
+    status: 000
+    note: >-
+      DNS resolves (CNAME homes-prod1.t11e.com) but no HTTP or HTTPS listener
+      answered. Marketing-automation host, not a developer surface.
+  - url: https://listings.homes.com/
+    status: 000
+    note: DNS resolves (listings-nocdn.homes.com, 208.40.199.8) but no listener answered.
+  - url: https://pro.homes.com/
+    status: 000
+    note: DNS resolves via Oracle (srm-emcee.us2.cloud.oracle.com) but no listener answered.
+  - url: https://support.homes.com/
+    status: 200
+    note: >-
+      The one reachable Homes.com host (WP Engine). Full consumer/agent help
+      centre. Scanned for "API", "developer", "feed", "syndication", "IDX", and
+      "RESO" — the only "RESO" matches were the substring inside "Resources",
+      and there is no API, developer, or data-feed article anywhere on it.
+  - url: https://www.homes.com/developers/
+    status: 403
+  - url: https://www.homes.com/api/
+    status: 403
+  - url: https://www.homes.com/api-docs
+    status: 403
+  - url: https://www.homes.com/openapi.json
+    status: 403
+  - url: https://www.homes.com/swagger.json
+    status: 403
+  - url: https://www.homes.com/graphql
+    status: 403
+  - url: https://www.homes.com/$metadata
+    status: 403
+    note: RESO Web API is OData; no $metadata document is served or advertised.
+  - url: https://www.homes.com/v1/$metadata
+    status: 403
+  - url: https://www.homes.com/.well-known/openid-configuration
+    status: 403
+  - url: https://www.homes.com/.well-known/security.txt
+    status: 403
+  - url: https://www.homes.com/robots.txt
+    status: 403
+  - url: https://www.homes.com/sitemap.xml
+    status: 403
+  - url: https://www.homes.com/about/
+    status: 403
+  - url: https://www.homesnap.com/
+    status: 301
+    note: >-
+      HTTP 301 to https://www.homes.com — the predecessor agent brand is fully
+      retired into Homes.com. Confirms the RESO directory's "Merged into
+      Homes.com" comment on T00000020.
+  - url: https://www.costargroup.com/
+    status: 403
+  - url: https://www.costargroup.com/developers
+    status: 403
+  - url: https://api.github.com/orgs/Homesnap
+    status: 200
+    note: >-
+      7 public repos, all forks of third-party libraries (tweetsharp,
+      facebook-csharp-sdk, ImageProcessor, libRETS, rabbitmq-dotnet-client,
+      AppAuth-iOS, flagd); five archived. No first-party SDK or API client. The
+      libRETS fork is a RETS CLIENT library — evidence of consuming MLS feeds,
+      not publishing them.
+  - url: https://api.github.com/orgs/CoStarGroup
+    status: 200
+    note: >-
+      5 public repos, all forks of third-party JavaScript libraries, none
+      touched since 2016. No API artifacts.
+  - url: https://www.reso.org/certification/
+    status: 200
+  - url: https://docs.google.com/spreadsheets/d/13azRbctJ3V2yTibmFYLSfJZsdHc8v3r2NEgEmoHviRc/export?format=csv
+    status: 200
+    note: RESO organization directory export, 2,881 rows, harvested 2026-07-26.
+
+sources:
+  - url: https://www.reso.org/certification/
+    type: StandardsBody
+    note: RESO Certification and MLS Map — source of the certification directory.
+  - url: https://support.homes.com/
+    type: Support
+    note: Only reachable Homes.com host; no API or developer content.
+  - url: https://www.homesnap.com/
+    type: Predecessor
+    note: 301 redirect to www.homes.com.
+  - url: https://github.com/Homesnap
+    type: GitHubOrganization
+    note: Forks only, including libRETS (MLS RETS client).
+  - url: https://github.com/CoStarGroup
+    type: GitHubOrganization
+    note: Forks only, dormant since 2016.
+
+actions:
+  apisYmlCreated: true
+  apisListed: 0
+  openapiHarvested: false
+  specsCount: 0
+  reason: >-
+    No first-party API, OpenAPI document, OData $metadata, AsyncAPI, GraphQL
+    schema, webhook contract, SDK, or Postman collection exists to record.
+    Recording an empty apis[] is the accurate outcome for this provider. The
+    unofficial Homes.com "APIs" sold on RapidAPI, Apify, Parse, and RealtyAPI
+    are third-party scrapers and were deliberately excluded — they are not
+    provider-published surfaces.

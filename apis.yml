@@ -1,0 +1,102 @@
+aid: homes-com
+name: Homes.com
+url: https://raw.githubusercontent.com/api-evangelist/homes-com/refs/heads/main/apis.yml
+kind: company
+description: >-
+  Homes.com is a United States residential real estate portal owned by CoStar
+  Group, which acquired the property in 2021 and folded the Homesnap agent
+  application into it — homesnap.com now issues an HTTP 301 to www.homes.com.
+  It sits on the consumer-facing portal layer of the US housing value chain,
+  alongside Zillow, Realtor.com, and Redfin: it aggregates for-sale, for-rent,
+  and off-market listings sourced from Multiple Listing Services and broker
+  syndication, and monetises through an agent-first "your listing, your lead"
+  advertising and agent-directory product rather than through data
+  distribution. Its API posture is empty in both directions of the RESO
+  question. Homes.com appears in the RESO organization directory as an active
+  Technology Company (OrganizationUniqueId T00000143), but the Data Dictionary
+  and Web API certification columns for that row are blank — it holds no RESO
+  certification of any version, unlike rival Move/Realtor.com (Data Dictionary
+  1.7 Passed, Web API Core 2.0.0 Passed) or Zillow's Bridge Interactive (Data
+  Dictionary 1.7 and Web API Core 2.0.0, Certified Legacy). Separately, no
+  developer surface is published at all: developer., developers., api., docs.,
+  apis., dev., idx., feeds., and data. subdomains of homes.com do not resolve
+  in DNS, and every path on www.homes.com returns HTTP 403 to non-browser
+  clients behind Akamai bot protection. Listing data moves INTO Homes.com from
+  MLSs and brokers via syndication opt-in, not OUT through any documented API.
+  No OpenAPI, no OData $metadata, no webhooks, no SDK, no Postman collection,
+  and no published authentication scheme were found. The GitHub organizations
+  Homesnap and CoStarGroup contain only archived forks of third-party libraries
+  — including libRETS, which is evidence of consuming MLS feeds rather than
+  publishing them. Third-party "Homes.com APIs" on RapidAPI, Apify, Parse, and
+  RealtyAPI are unofficial scrapers and are not recorded here as provider APIs.
+type: Index
+position: Provider
+access: 3rd-Party
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-26'
+  method: manual
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+  - Real Estate
+  - United States
+  - Property Listings
+  - MLS
+  - RESO
+  - IDX
+  - Rentals
+  - PropTech
+  - Portals
+  - Marketplaces
+  - Residential Real Estate
+  - Real Estate Agents
+  - Brokers
+  - Listings Syndication
+  - CoStar Group
+created: '2026-07-26'
+modified: '2026-07-26'
+specificationVersion: '0.19'
+apis: []
+common:
+  - type: Website
+    url: https://www.homes.com/
+  - type: About
+    url: https://www.homes.com/about/
+  - type: Support
+    url: https://support.homes.com/
+  - type: Blog
+    url: https://www.homes.com/blog/
+  - type: TermsOfService
+    url: https://www.homes.com/about/homesterms-of-use
+  - type: PrivacyPolicy
+    url: https://www.homes.com/about/policies/#privacy-policy
+  - type: Accessibility
+    url: https://www.homes.com/about/accessibility/
+  - type: Contact
+    url: https://www.homes.com/about/contact-us/
+  - type: Sitemap
+    url: https://www.homes.com/sitemap/
+  - type: Parent
+    url: https://www.costargroup.com/
+  - type: Predecessor
+    url: https://www.homesnap.com/
+  - type: StandardsBody
+    url: https://www.reso.org/certification/
+  - type: GitHubOrganization
+    url: https://github.com/Homesnap
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/homes-com
+  - type: Twitter
+    url: https://twitter.com/homesdotcom
+  - type: Facebook
+    url: https://www.facebook.com/homesdotcom
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
