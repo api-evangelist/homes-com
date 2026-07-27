@@ -1,0 +1,92 @@
+generated: '2026-07-26'
+method: searched
+source: live host probes + https://support.homes.com/ + RESO organization directory
+summary: >-
+  Homes.com publishes no API lifecycle policy of any kind, because it publishes
+  no API. There is no versioning scheme, no deprecation policy, no Sunset or
+  Deprecation header contract, no SLA, and no status page. The one real
+  lifecycle event this repo can evidence is a RETIREMENT: the Homesnap developer
+  and API surface that CoStar acquired in 2021 has been fully folded into
+  Homes.com, and its former developer hosts now redirect to the consumer site.
+versioning:
+  scheme: none published
+  current: null
+  docs: null
+deprecation:
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  note: >-
+    No deprecation or sunset policy is published on any reachable Homes.com or
+    CoStar Group surface. The Homesnap retirement below was executed as a silent
+    HTTP 301 to the consumer marketing site, with no dated notice, no sunset
+    window, and no migration guide found.
+sla:
+  url: null
+  uptime_target: null
+status_page: null
+status_page_probes:
+  - url: https://status.homes.com/
+    status: 000
+    note: DNS NXDOMAIN.
+  - url: https://status.costargroup.com/
+    status: 000
+    note: DNS NXDOMAIN.
+retired_surfaces:
+  - name: Homesnap developer / API hosts
+    predecessor_brand: Homesnap
+    acquired_by: CoStar Group (2021)
+    merged_into: Homes.com
+    status: retired
+    evidence:
+      - url: https://api.homesnap.com/
+        status: 301
+        location: https://www.homesnap.com/
+        note: >-
+          Host still resolves (3.209.217.73) but the API surface is gone — every
+          request 301s to the marketing site, which itself 301s to
+          https://www.homes.com.
+      - url: https://developer.homesnap.com/
+        status: 301
+        location: https://www.homesnap.com/
+        note: Same 301 chain; the former developer portal host is a redirect stub.
+      - url: https://www.homesnap.com/
+        status: 301
+        location: https://www.homes.com
+      - url: https://docs.homesnap.com/
+        status: 302
+        location: https://github.com/pages/auth
+        note: >-
+          Resolves by CNAME to homesnap.github.io — a GitHub Pages site served
+          from a PRIVATE repository (page_id 28792949). It 302s to GitHub Pages
+          authentication and is not publicly readable, so no documentation could
+          be harvested. A docs host survives the retirement, but access-gated.
+      - source: https://www.reso.org/certification/
+        kind: reso-directory
+        note: >-
+          RESO organization row T00000020 (Homesnap) is marked inactive with
+          OrganizationStatusChangeTimestamp 2024-11-15 and the explicit comment
+          "Merged into Homes.com" — the standards body's own record of the
+          retirement.
+deprecated_operations: []
+current_surfaces:
+  - host: www.homes.com
+    state: live
+    machine_readable_contract: none
+    note: >-
+      HTTP 403 to every non-browser client behind Akamai bot protection; no
+      OpenAPI, OData $metadata, GraphQL, AsyncAPI, or webhook contract is
+      advertised on any reachable path.
+  - host: support.homes.com
+    state: live
+    note: >-
+      The only reachable Homes.com host (WP Engine). Consumer/agent help centre
+      with no API, developer, or data-feed article.
+  - host: partners.homes.com
+    state: resolves-no-listener
+    note: CNAME homes-prod1.t11e.com — marketing automation, not a developer surface.
+  - host: listings.homes.com
+    state: resolves-no-listener
+  - host: pro.homes.com
+    state: resolves-no-listener
+    note: Resolves via Oracle (srm-emcee.us2.cloud.oracle.com); no listener answered.

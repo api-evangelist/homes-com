@@ -1,0 +1,95 @@
+generated: '2026-07-26'
+method: searched
+source: >-
+  RESO organization directory export (2,881 rows, harvested 2026-07-26) +
+  https://trust.costargroup.com/ + live host probes
+summary: >-
+  Homes.com conforms to no API-facing standard, because it exposes no API. The
+  real-estate-specific standards (RESO Data Dictionary, RESO Web API/OData,
+  UPI) are all NOT conformed to, and that absence is independently verified
+  against RESO's own certification directory rather than inferred from
+  unreachability. The only standards this provider can evidence conformance to
+  are corporate security frameworks published by its parent, CoStar Group.
+standards:
+  - id: reso-data-dictionary
+    conforms: false
+    evidence: >-
+      RESO organization directory row T00000143 (Homes.com, Technology Company,
+      active) has OrganizationDdVersion and OrganizationDdStatus both blank. The
+      columns are populated for the 25 of 202 Technology Company rows that do
+      hold a certification (Bridge Interactive, MLS Grid, Move, FBS, Rapattoni,
+      Perchwell, ICE and others), so the blank is a real absence, not a schema
+      artefact.
+    source: https://www.reso.org/certification/
+  - id: reso-web-api
+    conforms: false
+    evidence: >-
+      Same row: OrganizationWebApiVersion and OrganizationWebApiStatus blank.
+      Rival Move (Realtor.com) carries Web API Core 2.0.0 Passed and Zillow's
+      Bridge Interactive carries Core 2.0.0 Certified Legacy — Homes.com carries
+      neither.
+    source: https://www.reso.org/certification/
+  - id: odata-v4
+    conforms: false
+    evidence: >-
+      RESO Web API is an OData profile. No $metadata document is served or
+      advertised; https://www.homes.com/$metadata and /v1/$metadata both return
+      403 behind Akamai bot protection and no OData surface is documented
+      anywhere.
+  - id: reso-universal-property-identifier
+    conforms: false
+    evidence: UPI is not referenced on any reachable Homes.com surface.
+  - id: openapi
+    conforms: false
+    evidence: No OpenAPI or Swagger document found on any host or in either GitHub org.
+  - id: asyncapi
+    conforms: false
+    evidence: No event, streaming, or webhook surface is documented.
+  - id: graphql
+    conforms: false
+    evidence: No GraphQL endpoint documented; /graphql returns 403 with the rest of the host.
+  - id: oauth2
+    conforms: false
+    evidence: >-
+      No authorization server is published. The Homesnap GitHub org's AppAuth-iOS
+      fork is an OAuth/OIDC CLIENT library — consumer-side evidence about their
+      own mobile app, not a published authorization server for third parties.
+  - id: oidc
+    conforms: false
+    evidence: >-
+      https://www.homes.com/.well-known/openid-configuration returns 403 with
+      every other path; no auth or developer subdomain exists to host one.
+  - id: rfc9116-security-txt
+    conforms: false
+    evidence: >-
+      No retrievable /.well-known/security.txt on homes.com, support.homes.com,
+      costargroup.com, costar.com, or trust.costargroup.com.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: No API responses to evaluate.
+  - id: pci-dss
+    conforms: true
+    scope: parent-company
+    evidence: >-
+      Listed as a certification on the CoStar Group SafeBase trust center. Scope
+      is CoStar Group corporate; the portal does not name Homes.com explicitly.
+    source: https://trust.costargroup.com/
+  - id: iso-27001
+    conforms: true
+    scope: parent-company
+    evidence: >-
+      ISO/IEC 27001 listed on the CoStar Group SafeBase trust center. Corporate
+      scope, not a Homes.com-specific attestation.
+    source: https://trust.costargroup.com/
+  - id: nist-csf
+    conforms: true
+    scope: parent-company
+    evidence: NIST CSF alignment listed on the CoStar Group SafeBase trust center.
+    source: https://trust.costargroup.com/
+  - id: soc2
+    conforms: false
+    evidence: >-
+      No SOC 2 report is listed. The trust center lists SOC 1 Type 2 attestations
+      only, and both are scoped to other CoStar products (Visual Lease; CoStar
+      Real Estate Manager) — neither covers Homes.com.
+    source: https://trust.costargroup.com/

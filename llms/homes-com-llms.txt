@@ -1,0 +1,52 @@
+# Homes.com
+
+> Homes.com is a United States residential real estate portal owned by CoStar Group. It aggregates for-sale, for-rent, and off-market listings sourced from Multiple Listing Services and broker syndication, and monetises through an agent-first "your listing, your lead" advertising and agent-directory product. It publishes NO developer API: no OpenAPI, no RESO Web API / OData $metadata, no GraphQL, no AsyncAPI, no webhooks, no first-party SDK, and no Postman collection. Listing data moves INTO Homes.com from MLSs and brokers via syndication opt-in, not OUT through any documented interface.
+
+## Machine-readable contracts
+
+None. This is a verified absence, not an unexplored gap.
+
+- Every candidate developer host — developer., developers., api., docs., apis., dev., idx., feeds., data., media., agents., help. — is NXDOMAIN on homes.com.
+- Every path on www.homes.com returns HTTP 403 to non-browser clients behind Akamai bot protection, including /openapi.json, /swagger.json, /graphql, /$metadata, /api-docs, /robots.txt, and /.well-known/*.
+- support.homes.com is the one reachable Homes.com host; it is a consumer/agent help centre with no API, developer, or data-feed article, and returns 404 for /llms.txt and every /.well-known/ path.
+- The predecessor Homesnap developer surface is retired: api.homesnap.com and developer.homesnap.com both HTTP 301 to www.homesnap.com, which 301s to www.homes.com. docs.homesnap.com resolves to a PRIVATE GitHub Pages site and 302s to GitHub authentication.
+- The Homesnap and CoStarGroup GitHub organizations contain only archived forks of third-party libraries. The libRETS fork is an MLS RETS *client* — evidence of consuming feeds, not publishing them.
+
+Third-party "Homes.com APIs" sold on RapidAPI, Apify, Parse, and RealtyAPI are unofficial scrapers. They are not provider-published surfaces and are not catalogued here.
+
+## Standards posture
+
+- RESO Data Dictionary: NOT certified. Directory row T00000143 (Homes.com, Technology Company, active) has blank Data Dictionary columns.
+- RESO Web API: NOT certified. Blank Web API columns on the same row, while rival Move/Realtor.com holds Web API Core 2.0.0 Passed and Zillow's Bridge Interactive holds Core 2.0.0 Certified Legacy.
+- Parent CoStar Group and sibling Apartments.com are also listed and also uncertified; predecessor Homesnap is marked inactive with the comment "Merged into Homes.com".
+
+## Security posture
+
+Homes.com publishes no security.txt, no trust center, and no disclosure page of its own. Its parent CoStar Group publishes a SafeBase trust center at https://trust.costargroup.com/ listing PCI DSS, ISO/IEC 27001, and NIST CSF, plus SOC 1 Type 2 attestations scoped to Visual Lease and CoStar Real Estate Manager (not Homes.com). Responsible disclosure goes to csgpappsec@costar.com. All of it is corporate scope; the portal does not name Homes.com.
+
+## Artifacts in this profile
+
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/homes-com/refs/heads/main/apis.yml): APIs.json provider index.
+- [review.yml](https://raw.githubusercontent.com/api-evangelist/homes-com/refs/heads/main/review.yml): full API Evangelist review — RESO posture, access gate, and every host probe with its HTTP status.
+- [conformance/homes-com-conformance.yml](https://raw.githubusercontent.com/api-evangelist/homes-com/refs/heads/main/conformance/homes-com-conformance.yml): standards conformance, with RESO evidence.
+- [lifecycle/homes-com-lifecycle.yml](https://raw.githubusercontent.com/api-evangelist/homes-com/refs/heads/main/lifecycle/homes-com-lifecycle.yml): lifecycle posture and the Homesnap developer-surface retirement.
+- [security/homes-com-domain-security.yml](https://raw.githubusercontent.com/api-evangelist/homes-com/refs/heads/main/security/homes-com-domain-security.yml): TLS/HSTS/DNSSEC/CAA/SPF/DMARC probe.
+- [security/homes-com-trust-center.yml](https://raw.githubusercontent.com/api-evangelist/homes-com/refs/heads/main/security/homes-com-trust-center.yml): parent-company trust center and certifications.
+- [security/homes-com-vulnerability-disclosure.yml](https://raw.githubusercontent.com/api-evangelist/homes-com/refs/heads/main/security/homes-com-vulnerability-disclosure.yml): disclosure channel.
+
+## Human surfaces
+
+- [Homes.com](https://www.homes.com/): consumer portal (403 to non-browser clients).
+- [Support](https://support.homes.com/): help centre, the only reachable host.
+- [Blog](https://www.homes.com/blog/)
+- [Advertise](https://www.homes.com/advertise/): agent and seller advertising products.
+- [Membership](https://www.homes.com/solutions/membership): paid agent plans; rates by quote, not published.
+- [Join](https://www.homes.com/solutions/join-now): agent sign-up.
+- [Terms of Use](https://www.homes.com/about/homesterms-of-use)
+- [Privacy](https://www.homes.com/about/policies/#privacy-policy)
+- [CoStar Group](https://www.costargroup.com/): parent company.
+- [RESO Certification directory](https://www.reso.org/certification/): source of the certification posture above.
+
+## Notes for agents
+
+There is nothing here to call. Do not attempt to construct a Homes.com API client, and do not treat scraped third-party endpoints as a provider contract. If you need RESO-conformant US residential listing data programmatically, go to a certified Web API implementer in the RESO directory (an MLS, MLS Grid, Bridge Interactive, or Move) rather than to this portal.

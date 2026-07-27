@@ -65,6 +65,28 @@ modified: '2026-07-26'
 specificationVersion: '0.19'
 apis: []
 common:
+  - type: DomainSecurity
+    url: security/homes-com-domain-security.yml
+  - type: TrustCenter
+    name: CoStar Group Trust Center (parent company)
+    url: https://trust.costargroup.com/
+  - type: TrustCenter
+    name: Trust center artifact
+    url: security/homes-com-trust-center.yml
+  - type: Compliance
+    name: PCI DSS, ISO/IEC 27001, NIST CSF (CoStar Group corporate scope)
+    url: https://trust.costargroup.com/
+  - type: VulnerabilityDisclosure
+    url: security/homes-com-vulnerability-disclosure.yml
+  - type: Security
+    name: CoStar Group responsible disclosure (csgpappsec@costar.com)
+    url: https://trust.costargroup.com/
+  - type: Conformance
+    url: conformance/homes-com-conformance.yml
+  - type: Lifecycle
+    url: lifecycle/homes-com-lifecycle.yml
+  - type: LLMsTxt
+    url: llms/homes-com-llms.txt
   - type: Website
     url: https://www.homes.com/
   - type: About
@@ -89,8 +111,17 @@ common:
     url: https://www.homesnap.com/
   - type: StandardsBody
     url: https://www.reso.org/certification/
+  - type: Pricing
+    name: Homes.com Membership — paid agent plans (rates by quote, not published)
+    url: https://www.homes.com/solutions/membership
+  - type: SignUp
+    name: Join Homes.com (agent account; grants a directory profile, not an API credential)
+    url: https://www.homes.com/solutions/join-now
   - type: GitHubOrganization
     url: https://github.com/Homesnap
+  - type: GitHubOrganization
+    name: CoStar Group (parent)
+    url: https://github.com/CoStarGroup
   - type: LinkedIn
     url: https://www.linkedin.com/company/homes-com
   - type: Twitter
