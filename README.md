@@ -1,5 +1,47 @@
 # Homes.com (homes-com)
 
+<!-- API-EVANGELIST-PROVENANCE:BEGIN -->
+> ### About this repository
+>
+> **This is not our API.** This repository is an independent, third-party profile of a company's
+> **publicly available** API surface, maintained by [API Evangelist](https://apievangelist.com).
+> API Evangelist does not operate, host, resell, or support this company's APIs, and is not
+> affiliated with or endorsed by the company unless stated on the profile.
+>
+> **Where the information came from.** Everything here is assembled from material a member of the
+> public can reach with a browser and no credentials — the company's own website, developer portal
+> and documentation, the specifications it publishes for public use (OpenAPI, AsyncAPI, JSON Schema,
+> `apis.json`, `llms.txt` and similar), its public repositories, and its public status, pricing and
+> changelog pages. **Nothing here is obtained by breaching a system, defeating an access control, or
+> using credentials of any kind.**
+>
+> **The rating is an independent assessment.** The Kin Score and Agent Readiness rating are
+> independently calculated scores of a company's *public* API artifacts, produced by API Evangelist
+> against a published rubric. They are not certifications, endorsements, security assessments, or
+> audits, and they score published artifacts — not the quality, safety, or security of the software.
+>
+> **Corrections, re-scores, and removal are free.** No partnership, contract, or purchase is
+> required, and you do not need to justify the request.
+>
+> - **Something wrong?** Open an issue on this repository, or email
+>   [info@apievangelist.com](mailto:info@apievangelist.com).
+> - **Published something new?** Ask for a re-score and we will re-run the rating.
+> - **Want the listing taken down?** Say so and we will honor it. The profile is reduced to your
+>   company name, a factual description, and a link to your own site, and the company is recorded as
+>   **unrated** — never scored zero for having asked.
+>
+> **Response times.** Acknowledgement within **one business day**; removal or restriction within
+> **two business days**; corrections and re-scores within **five business days**.
+>
+> **On a security or compliance team?** Email
+> [info@apievangelist.com](mailto:info@apievangelist.com) with *security* in the subject line and
+> you will get a person, not a form. We will tell you exactly which public URLs this profile was
+> built from so your team can see the same surface we did, and we will take the listing down on
+> request while you work through it.
+>
+> Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
+<!-- API-EVANGELIST-PROVENANCE:END -->
+
 Homes.com is a United States residential real estate portal owned by CoStar Group, which acquired the property in 2021 and folded the Homesnap agent application into it — homesnap.com now issues an HTTP 301 to www.homes.com. It sits on the consumer-facing portal layer of the US housing value chain, alongside Zillow, Realtor.com, and Redfin: it aggregates for-sale, for-rent, and off-market listings sourced from Multiple Listing Services and broker syndication, and monetises through an agent-first advertising and agent-directory product rather than through data distribution. Its API posture is empty in both directions of the RESO question. Homes.com appears in the RESO organization directory as an active Technology Company (OrganizationUniqueId T00000143), but the Data Dictionary and Web API certification columns for that row are blank — it holds no RESO certification of any version, unlike rival Move/Realtor.com (Data Dictionary 1.7 Passed, Web API Core 2.0.0 Passed) or Zillow's Bridge Interactive (Data Dictionary 1.7 and Web API Core 2.0.0, Certified Legacy). Separately, no developer surface is published at all: developer., developers., api., docs., apis., dev., idx., feeds., and data. subdomains of homes.com do not resolve in DNS, and every path on www.homes.com returns HTTP 403 to non-browser clients behind Akamai bot protection. Listing data moves INTO Homes.com from MLSs and brokers via syndication opt-in, not OUT through any documented API.
 
 **APIs.json:** [https://raw.githubusercontent.com/api-evangelist/homes-com/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/homes-com/refs/heads/main/apis.yml)
