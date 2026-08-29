@@ -30,6 +30,17 @@ description: >-
   publishing them. Third-party "Homes.com APIs" on RapidAPI, Apify, Parse, and
   RealtyAPI are unofficial scrapers and are not recorded here as provider APIs.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 position: Provider
 access: 3rd-Party
 accessModel:
