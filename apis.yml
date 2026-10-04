@@ -56,7 +56,7 @@ accessModel:
   method: manual
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
-  - Real-Estate
+  - Real Estate
   - United States
   - Property Listings
   - MLS
@@ -87,6 +87,7 @@ tags_raw:
   - Brokers
   - Listings Syndication
   - CoStar Group
+  - Real-Estate
 created: '2026-07-26'
 modified: '2026-07-26'
 specificationVersion: '0.23'
