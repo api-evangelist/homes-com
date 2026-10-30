@@ -1,4 +1,4 @@
-# Homes.com (homes-com)
+# Homes.com
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,67 +64,91 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Homes.com is a United States residential real estate portal owned by CoStar Group, which acquired the property in 2021 and folded the Homesnap agent application into it — homesnap.com now issues an HTTP 301 to www.homes.com. It sits on the consumer-facing portal layer of the US housing value chain, alongside Zillow, Realtor.com, and Redfin: it aggregates for-sale, for-rent, and off-market listings sourced from Multiple Listing Services and broker syndication, and monetises through an agent-first advertising and agent-directory product rather than through data distribution. Its API posture is empty in both directions of the RESO question. Homes.com appears in the RESO organization directory as an active Technology Company (OrganizationUniqueId T00000143), but the Data Dictionary and Web API certification columns for that row are blank — it holds no RESO certification of any version, unlike rival Move/Realtor.com (Data Dictionary 1.7 Passed, Web API Core 2.0.0 Passed) or Zillow's Bridge Interactive (Data Dictionary 1.7 and Web API Core 2.0.0, Certified Legacy). Separately, no developer surface is published at all: developer., developers., api., docs., apis., dev., idx., feeds., and data. subdomains of homes.com do not resolve in DNS, and every path on www.homes.com returns HTTP 403 to non-browser clients behind Akamai bot protection. Listing data moves INTO Homes.com from MLSs and brokers via syndication opt-in, not OUT through any documented API.
+Homes.com is a United States residential real estate portal owned by CoStar Group, which acquired the property in 2021 and folded the Homesnap agent application into it — homesnap.com now issues an HTTP 301 to www.homes.com. It sits on the consumer-facing portal layer of the US housing value chain, alongside Zillow, Realtor.com, and Redfin: it aggregates for-sale, for-rent, and off-market listings sourced from Multiple Listing Services and broker syndication, and monetises through an agent-first "your listing, your lead" advertising and agent-directory product rather than through data distribution. Its API posture is empty in both directions of the RESO question. Homes.com appears in the RESO organization directory as an active Technology Company (OrganizationUniqueId T00000143), but the Data Dictionary and Web API certification columns for that row are blank — it holds no RESO certification of any version, unlike rival Move/Realtor.com (Data Dictionary 1.7 Passed, Web API Core 2.0.0 Passed) or Zillow's Bridge Interactive (Data Dictionary 1.7 and Web API Core 2.0.0, Certified Legacy). Separately, no developer surface is published at all: developer., developers., api., docs., apis., dev., idx., feeds., and data. subdomains of homes.com do not resolve in DNS, and every path on www.homes.com returns HTTP 403 to non-browser clients behind Akamai bot protection. Listing data moves INTO Homes.com from MLSs and brokers via syndication opt-in, not OUT through any documented API. No OpenAPI, no OData $metadata, no webhooks, no SDK, no Postman collection, and no published authentication scheme were found. The GitHub organizations Homesnap and CoStarGroup contain only archived forks of third-party libraries — including libRETS, which is evidence of consuming MLS feeds rather than publishing them. Third-party "Homes.com APIs" on RapidAPI, Apify, Parse, and RealtyAPI are unofficial scrapers and are not recorded here as provider APIs.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/homes-com/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/homes-com/refs/heads/main/apis.yml)
+**Areas:** Real Estate · United States · Property Listings · MLS · RESO · IDX · Rentals · PropTech · Portal · Marketplace · Residential Real Estate · Real Estate Agents
 
-## Tags
+## Homes.com on APIs.io
 
-- Real Estate
-- United States
-- Property Listings
-- MLS
-- RESO
-- IDX
-- Rentals
-- PropTech
-- Portals
-- Marketplaces
-- Residential Real Estate
-- Real Estate Agents
-- Brokers
-- Listings Syndication
-- CoStar Group
+Everything profiled for Homes.com is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/homes-com/](https://apis.io/providers/homes-com/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-07-26
-- **Modified:** 2026-07-26
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Security (3)
 
-No first-party public APIs are published by Homes.com. The `apis` array is intentionally empty.
+Authentication, trust centre, and vulnerability disclosure.
 
-- **RESO posture:** Listed in the RESO organization directory as an active Technology Company (`T00000143`), with no Data Dictionary and no Web API certification recorded. Certification columns are populated for 25 of the 202 Technology Company rows in the same export, so the blank is a real absence, not a schema artefact.
-- **Access gate:** `none-published`. There is no developer agreement, IDX/VOW licence, partner API application, or reseller path branded by Homes.com. Free self-serve agent web accounts exist — and MLS membership is explicitly not required for one — but they grant a directory profile in a browser, not an API credential.
-- **Open data:** none.
-- **Auth model:** none published. No `/.well-known/openid-configuration`, no API key programme, no OAuth or OIDC authorization server for third parties.
-- **Webhooks / events / SDKs / Postman:** none first-party. The `Homesnap` and `CoStarGroup` GitHub organizations contain only archived forks of third-party libraries; the `libRETS` fork is a RETS *client* — evidence of consuming MLS feeds, not publishing them.
+- [Homes Com Domain Security](https://apis.io/security/homes-com/homes-com-domain-security/)
+- [Homes Com Trust Center](https://apis.io/security/homes-com/homes-com-trust-center/)
+- [Homes Com Vulnerability Disclosure](https://apis.io/security/homes-com/homes-com-vulnerability-disclosure/)
 
-Third-party "Homes.com APIs" sold on RapidAPI, Apify, Parse, and RealtyAPI are unofficial scrapers and are deliberately not recorded here.
+## Where to find this API
 
-See [review.yml](review.yml) for the full probe table, HTTP statuses, and the verbatim RESO directory rows.
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.homes.com/)
-- [About](https://www.homes.com/about/)
+- [Pricing](https://www.homes.com/solutions/membership)
+- [Sign up](https://www.homes.com/solutions/join-now)
 - [Support](https://support.homes.com/)
 - [Blog](https://www.homes.com/blog/)
-- [Terms Of Service](https://www.homes.com/about/homesterms-of-use)
-- [Privacy Policy](https://www.homes.com/about/policies/#privacy-policy)
-- [Accessibility](https://www.homes.com/about/accessibility/)
-- [Contact](https://www.homes.com/about/contact-us/)
-- [Sitemap](https://www.homes.com/sitemap/)
-- [Parent](https://www.costargroup.com/)
-- [Predecessor](https://www.homesnap.com/)
-- [Standards Body](https://www.reso.org/certification/)
-- [GitHub Organization](https://github.com/Homesnap)
-- [LinkedIn](https://www.linkedin.com/company/homes-com)
-- [Twitter](https://twitter.com/homesdotcom)
-- [Facebook](https://www.facebook.com/homesdotcom)
+- [Security](https://trust.costargroup.com/)
+- [Compliance](https://trust.costargroup.com/)
+- [Trust centre](https://trust.costargroup.com/)
+- [Terms of service](https://www.homes.com/about/homesterms-of-use)
+- [Privacy policy](https://www.homes.com/about/policies/#privacy-policy)
+- [GitHub](https://github.com/Homesnap)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 24.0** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 60.5 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 27.8** — Securities & Market Data
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/homes-com/](https://apis.io/providers/homes-com/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Homes.com: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/homes-com/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
